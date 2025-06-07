@@ -44,6 +44,9 @@ sources:
         columns :
           - name : offer_id
             description : Unique offer ID (primary key)
+            tests:
+              - unique
+              - not_null
           - name: offer_type
             description : type of offer bogo (buy one, get one), discount, or informational
           - name: difficulty
