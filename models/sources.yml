@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: default
+    database : workspace
+    description: test dataset
+
+    tables:
+      - name: reseau_deau_potable_conduite
+        columns:
+          - name: cond_id
+            tests:
+              - unique
+              - not_null
+
