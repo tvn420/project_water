@@ -11,4 +11,4 @@ geojson,
 COALESCE(cond_annee_pose,1900) AS cond_annee_pose
 
 from 
-{{ source("eau_potable","reseau_deau_potable_conduite") }}
+{{ source("default","reseau_deau_potable_conduite") }}
