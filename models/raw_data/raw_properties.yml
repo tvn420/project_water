@@ -1,5 +1,4 @@
 models:
   - name : raw_res_eau_potable
     config :
-      materialized : table
       file_format : delta  

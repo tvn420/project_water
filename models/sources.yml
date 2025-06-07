@@ -13,3 +13,7 @@ sources:
               - unique
               - not_null
 
+      - name: eau_evolution_des_prelevements_en_eau_pour_les_besoins_du_territoire_parisien
+        columns:
+          - name: annee
+            description : annee observation
