@@ -1,0 +1,19 @@
+project_water:
+  target : dev
+  outputs:
+    My organization:
+      type: databricks
+      catalog: My organization #optional catalog name if you are using Unity Catalog]
+      schema: default # Required
+      host: dbc-5045f30b-da5a.cloud.databricks.com # Required
+      http_path: /sql/1.0/warehouses/3f25447d480a43cb # Required
+      token: dapicc77e4d86e05f7abb5d6a37bd9bc107e # Required Personal Access Token (PAT) if using token-based authentication
+      threads: 1  # Optional, default 1   
+    dev:
+      type: databricks
+      catalog: dev #optional catalog name if you are using Unity Catalog]
+      schema: default # Required
+      host: dbc-5045f30b-da5a.cloud.databricks.com # Required
+      http_path: /sql/1.0/warehouses/3f25447d480a43cb # Required
+      token: dapicc77e4d86e05f7abb5d6a37bd9bc107e # Required Personal Access Token (PAT) if using token-based authentication
+      threads: 1  # Optional, default 1
