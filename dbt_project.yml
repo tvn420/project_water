@@ -31,6 +31,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   project_water:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+      +materialized: incremental
+      merge_with_schema_evolution: true
+      
