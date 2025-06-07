@@ -13,7 +13,47 @@ sources:
               - unique
               - not_null
 
-      - name: eau_evolution_des_prelevements_en_eau_pour_les_besoins_du_territoire_parisien
+      - name: customers
         columns:
-          - name: annee
-            description : annee observation
+          - name: customer_id
+            description : primary key
+            tests:
+              - unique
+              - not_null
+          - name: became_member_on
+            description : Date when the customer created their account (yyyymmdd)
+          - name : gender
+            description : Customer's gender (M)ale, (F)emale, or (O)ther
+          - name : age
+            description : Customer's age
+          - name : Customer's estimated annual income, in USD
+
+      - name : events
+        description : Data on customer activity, with records for transactions, offers received, offers viewed, and offers completed
+        columns:
+          - name : customer_id
+            description : Customer the event is associated with  (foreign key)
+          - name : event
+            description : Description of the event (transaction, offer received, offer viewed, or offer completed)
+          - name : value
+            description : Dictionary of values associated with the event (amount for transactions, offer_id for offers received and viewed, and offer_id & reward for offers completed).
+          - name : time
+            decription : Hours passed in the 30-day period (starting at 0)
+      
+      - name : offers
+        columns :
+          - name : offer_id
+            description : Unique offer ID (primary key)
+            tests:
+              - unique
+              - not_null
+          - name: offer_type
+            description : type of offer bogo (buy one, get one), discount, or informational
+          - name: difficulty
+            description: minimum amount required to spend in order to be able to complete the offer
+          - name : reward
+            description : reward (in dollars) obtained by completing the offer
+          - name : duration
+            description : days a customer has to complete the offer once they have received it
+          - name : channels
+            description : list of marketing channels used to send the offer to customers
